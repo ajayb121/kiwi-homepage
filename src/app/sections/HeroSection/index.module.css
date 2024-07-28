@@ -1,0 +1,21 @@
+.wrapper {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.sectionBody {
+  padding: 150px 0;
+  color: #ffffff;
+}
+
+.header {
+  font-size: 90px;
+}
+
+.description {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 900px;
+  padding-top: 25px;
+}

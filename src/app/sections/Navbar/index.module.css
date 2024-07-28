@@ -1,0 +1,54 @@
+.wrapper {
+  height: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #000000;
+}
+
+.navbar {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  margin-left: 2rem;
+}
+
+.navLinks a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.chatButton a {
+  background-color: #dbff00;
+  color: #000000;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: bold;
+  border: 1px solid #000000;
+}
+
+.chatButton a:hover {
+  border: 1px solid #dbff00;
+  background-color: #000000;
+  color: white;
+}

@@ -1,0 +1,76 @@
+.wrapper {
+  background-color: #fffcec;
+  color: #000000;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  position: relative;
+  bottom: 160px;
+  padding: 0 20px;
+}
+
+.sectionBody {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.header {
+  font-size: 64px;
+}
+
+.description {
+  font-size: 20px;
+  max-width: 900px;
+  padding-top: 25px;
+}
+
+.chatButton a {
+  background-color: #dbff00;
+  color: #000000;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: bold;
+  border: 1px solid #000000;
+}
+
+.chatButton a:hover {
+  border: 1px solid #dbff00;
+  background-color: #000000;
+  color: white;
+}
+
+.processContainer {
+  padding: 50px 0;
+}
+
+.process {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.processTitle {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.processDescription {
+  font-size: 20px;
+  padding: 0 0 15px;
+}
+
+.processIndex {
+  font-size: 28px;
+  padding: 10px 0;
+}

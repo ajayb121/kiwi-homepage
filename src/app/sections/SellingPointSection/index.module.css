@@ -1,0 +1,53 @@
+.wrapper {
+  background-color: #ff4829;
+  color: #000000;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  position: relative;
+  bottom: 320px;
+  padding: 0 20px;
+}
+
+.sectionBody {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.header {
+  font-size: 60px;
+  max-width: 580px;
+  padding-bottom: 60px;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 20px;
+  max-width: 900px;
+  padding-top: 25px;
+}
+
+.chatButton a {
+  background-color: #dbff00;
+  color: #000000;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: bold;
+  border: 1px solid #000000;
+}
+
+.chatButton a:hover {
+  border: 1px solid #dbff00;
+  background-color: #000000;
+  color: white;
+}

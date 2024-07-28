@@ -1,0 +1,35 @@
+.wrapper {
+  background-color: #dbff00;
+  height: 225px;
+  overflow-x: hidden;
+}
+
+.horizontalScroll {
+  position: absolute;
+  left: 0;
+  display: flex;
+  gap: 50px;
+}
+
+.text {
+  font-size: 60px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card {
+  height: 125px;
+  width: max-content;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.divider {
+  height: 8px;
+  width: 48px;
+  background-color: #000000;
+  margin: 1rem 0;
+}

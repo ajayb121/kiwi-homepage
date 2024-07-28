@@ -1,0 +1,82 @@
+.wrapper {
+  background-color: #000000;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  position: relative;
+  bottom: 80px;
+  padding: 0 20px;
+}
+
+.sectionBody {
+  color: #ffffff;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: 1fr;
+  padding: 100px 0 200px;
+  gap: 50px;
+}
+
+.description {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 20px;
+}
+
+.header {
+  padding: 150px 0 50px;
+  font-size: 64px;
+  width: 500px;
+  color: #ffffff;
+}
+
+.subHeader {
+  font-size: 60px;
+  color: #ffffff;
+  padding-top: 550px;
+}
+
+.imageBg {
+  background-color: red;
+  height: 637px;
+  width: 537px;
+  border-radius: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 50px;
+  font-size: 28px;
+  color: white;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+.firstSection {
+  grid-column: 1 / 2;
+  position: sticky;
+  top: 50px;
+  left: 0;
+  align-self: start;
+}
+
+.secondSection {
+  grid-column: 2 / 4;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}

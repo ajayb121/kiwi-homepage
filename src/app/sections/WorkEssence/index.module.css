@@ -1,0 +1,45 @@
+.wrapper {
+  height: 1600px;
+  overflow-x: hidden;
+  background-color: #000000;
+  color: #ffffff;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  position: relative;
+  bottom: 240px;
+  padding: 0 20px;
+}
+
+.horizontalScroll {
+  position: absolute;
+  left: 0;
+  top: 200px;
+  display: flex;
+  gap: 20px;
+}
+
+.text {
+  font-size: 60px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card {
+  /* height: 125px; */
+  width: max-content;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.headerContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 64px;
+  padding-top: 100px;
+}
