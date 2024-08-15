@@ -7,17 +7,12 @@ import useMeasure from "react-use-measure";
 import Image from "next/image";
 import { archivoBlack } from "@/app/fonts";
 
-const images = [
-  "/image-1.jpg",
-  "/image-2.jpg",
-  "/image-3.jpg",
-  "/image-4.jpg",
-  "/image-5.jpg",
-  "/image-6.jpg",
-  "/image-7.jpg",
-];
+type ImageLayerProps = {
+  top: number;
+  images: string[];
+};
 
-const FirstImageLayer = ({ top }: { top: number }) => {
+const FirstImageLayer = ({ top, images }: ImageLayerProps) => {
   const [ref, { width }] = useMeasure();
 
   const xTranslation = useMotionValue(0);
@@ -70,7 +65,7 @@ const FirstImageLayer = ({ top }: { top: number }) => {
   );
 };
 
-const SecondImageLayer = ({ top }: { top: number }) => {
+const SecondImageLayer = ({ top, images }: ImageLayerProps) => {
   const [ref, { width }] = useMeasure();
 
   const xTranslation = useMotionValue(0);
@@ -123,6 +118,30 @@ const SecondImageLayer = ({ top }: { top: number }) => {
   );
 };
 
+const layerImages = {
+  firstLayer: [
+    "/image-1.png",
+    "/image-2.png",
+    "/image-3.png",
+    "/image-4.png",
+    "/image-5.png",
+  ],
+  secondLayer: [
+    "/image-6.png",
+    "/image-7.png",
+    "/image-8.png",
+    "/image-9.png",
+    "/image-10.png",
+  ],
+  thirdLayer: [
+    "/image-11.png",
+    "/image-12.png",
+    "/image-13.png",
+    "/image-14.png",
+    "/image-15.png",
+  ],
+};
+
 const WorkEssence = () => {
   return (
     <div className={styles.wrapper}>
@@ -131,15 +150,10 @@ const WorkEssence = () => {
           Essence of Our Work
         </h1>
       </div>
-      <div
-        style={{
-          // rotate: "30deg",
-          transform: "rotate(4deg)",
-        }}
-      >
-        <FirstImageLayer top={200} />
-        <SecondImageLayer top={500} />
-        <FirstImageLayer top={800} />
+      <div className={styles.layerContainer}>
+        <FirstImageLayer top={200} images={layerImages.firstLayer} />
+        <SecondImageLayer top={500} images={layerImages.secondLayer} />
+        <FirstImageLayer top={800} images={layerImages.thirdLayer} />
       </div>
     </div>
   );

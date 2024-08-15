@@ -7,6 +7,15 @@
   padding: 0 20px;
 }
 
+.mobileWrapper {
+  background-color: #000000;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  position: relative;
+  bottom: 80px;
+  padding: 32px 20px 112px;
+}
+
 .sectionBody {
   color: #ffffff;
   max-width: 1280px;
@@ -18,10 +27,22 @@
   gap: 50px;
 }
 
+.mobileSectionBody {
+  color: #ffffff;
+  gap: 50px;
+}
+
 .description {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.7);
   padding-top: 20px;
+}
+
+.mobileDescription {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 20px;
+  text-align: center;
 }
 
 .header {
@@ -31,10 +52,24 @@
   color: #ffffff;
 }
 
+.mobileHeader {
+  padding: 30px 0;
+  font-size: 32px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+}
+
 .subHeader {
   font-size: 60px;
   color: #ffffff;
   padding-top: 550px;
+}
+
+.mobileSubHeader {
+  font-size: 32px;
+  color: #ffffff;
+  text-align: center;
 }
 
 .imageBg {
@@ -42,6 +77,28 @@
   height: 637px;
   width: 537px;
   border-radius: 20px;
+}
+
+.mobileImageBg {
+  background-color: red;
+  height: 440px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+.mobileButtonsContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  justify-content: center;
 }
 
 .button {
@@ -62,6 +119,24 @@
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 }
 
+.mobileButton {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 20px;
+  color: white;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  text-decoration: none;
+}
+
+.mobileButton:hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
 .firstSection {
   grid-column: 1 / 2;
   position: sticky;
@@ -72,11 +147,4 @@
 
 .secondSection {
   grid-column: 2 / 4;
-}
-
-.buttonsContainer {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  padding-top: 50px;
 }

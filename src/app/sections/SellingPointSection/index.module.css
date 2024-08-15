@@ -51,3 +51,34 @@
   background-color: #000000;
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    position: relative;
+    bottom: 320px;
+    padding: 0 20px;
+  }
+
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .sectionBody {
+    padding: 80px 0 100px;
+  }
+
+  .header {
+    font-size: 32px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .chatButton {
+    text-align: center;
+  }
+}

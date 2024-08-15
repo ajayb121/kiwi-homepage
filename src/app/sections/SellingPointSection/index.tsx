@@ -3,8 +3,11 @@ import { archivoBlack } from "@/app/fonts";
 import styles from "./index.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import useResponsiveView from "@/app/hooks/useResponsiveView";
 
 const SellingPointSection: React.FC = () => {
+  const isMobile = useResponsiveView();
+
   return (
     <div className={styles.wrapper}>
       <section className={styles.sectionBody}>
@@ -18,8 +21,8 @@ const SellingPointSection: React.FC = () => {
             src="/sales-icon.svg"
             alt="Feather Icon"
             className={styles.featherIcon}
-            width={134}
-            height={134}
+            width={isMobile ? 72 : 134}
+            height={isMobile ? 72 : 134}
             priority
           />
         </div>

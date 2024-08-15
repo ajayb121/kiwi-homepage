@@ -33,3 +33,28 @@
   background-color: #000000;
   margin: 1rem 0;
 }
+
+@media only screen and (max-width: 600px) {
+  .text {
+    font-size: 28px;
+  }
+
+  .divider {
+    height: 4px;
+    width: 24px;
+    margin: 0.5rem 0;
+  }
+
+  .card {
+    height: 60px;
+    gap: 20px;
+  }
+
+  .horizontalScroll {
+    gap: 20px;
+  }
+
+  .wrapper {
+    height: 160px;
+  }
+}

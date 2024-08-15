@@ -4,6 +4,7 @@ import { animate, motion, useAnimation, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 import styles from "./index.module.css";
 import useMeasure from "react-use-measure";
+import useResponsiveView from "@/app/hooks/useResponsiveView";
 
 const ribbonText = [
   "PRODUCT DESIGN",
@@ -15,12 +16,14 @@ const ribbonText = [
 
 const ProductRibbon = () => {
   const [ref, { width }] = useMeasure();
-
+  const isMobile = useResponsiveView();
   const xTranslation = useMotionValue(0);
 
   useEffect(() => {
+    const offset = isMobile ? 20 : 50;
+
     let controls;
-    let finalPosition = -width / 2 - 50;
+    let finalPosition = -width / 2 - offset;
 
     controls = animate(xTranslation, [0, finalPosition], {
       repeat: Infinity,

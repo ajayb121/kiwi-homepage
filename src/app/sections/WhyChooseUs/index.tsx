@@ -1,8 +1,11 @@
 import { archivoBlack } from "@/app/fonts";
 
 import styles from "./index.module.css";
+import useResponsiveView from "@/app/hooks/useResponsiveView";
 
 const WhyChooseUs = () => {
+  const isMobile = useResponsiveView();
+
   const sections = [
     {
       title: "Impeccable Design",
@@ -33,6 +36,40 @@ const WhyChooseUs = () => {
       ],
     },
   ];
+
+  if (isMobile) {
+    return (
+      <div className={styles.mobileWrapper}>
+        <section className={styles.mobileSectionBody}>
+          <h2 className={`${archivoBlack.className} ${styles.mobileHeader}`}>
+            Why Choose Us ?
+          </h2>
+          <div className={styles.mobileImageBg}></div>
+
+          {sections.map((section, index) => (
+            <div
+              key={index}
+              style={{ paddingTop: index === 0 ? "80px" : "100px" }}
+            >
+              <h3
+                className={`${archivoBlack.className} ${styles.mobileSubHeader}`}
+              >
+                {section.title}
+              </h3>
+              <p className={styles.mobileDescription}>{section.description}</p>
+              <div className={styles.mobileButtonsContainer}>
+                {section.links.map((link, linkIndex) => (
+                  <a key={linkIndex} href="#" className={styles.mobileButton}>
+                    {link}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.wrapper}>

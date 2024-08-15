@@ -59,6 +59,10 @@
   border-bottom: 1px solid #e5e5e5;
 }
 
+.process:last-of-type {
+  border-bottom: 0;
+}
+
 .processTitle {
   font-size: 30px;
   font-weight: bold;
@@ -73,4 +77,53 @@
 .processIndex {
   font-size: 28px;
   padding: 10px 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .wrapper {
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    position: relative;
+    bottom: 102px;
+    padding: 0 20px;
+  }
+
+  .sectionBody {
+    padding: 80px 0 120px;
+  }
+
+  .header {
+    font-size: 32px;
+    padding-top: 28px;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .processContainer {
+    padding: 38px 0;
+  }
+
+  .processDescription {
+    font-size: 18px;
+  }
+
+  .processTitle,
+  .processIndex {
+    font-size: 20px;
+  }
+
+  .chatButton {
+    text-align: center;
+  }
 }
