@@ -1,4 +1,5 @@
-.wrapper {
+.desktopWrapper {
+  display: block;
   background-color: #000000;
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
@@ -8,6 +9,7 @@
 }
 
 .mobileWrapper {
+  display: none;
   background-color: #000000;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
@@ -147,4 +149,13 @@
 
 .secondSection {
   grid-column: 2 / 4;
+}
+
+@media only screen and (max-width: 600px) {
+  .desktopWrapper {
+    display: none;
+  }
+  .mobileWrapper {
+    display: block;
+  }
 }
