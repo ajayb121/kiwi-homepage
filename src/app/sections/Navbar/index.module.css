@@ -1,4 +1,5 @@
-.wrapper {
+.desktopWrapper {
+  display: block;
   height: 80px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   position: sticky;
@@ -51,4 +52,10 @@
   border: 1px solid #dbff00;
   background-color: #000000;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .desktopWrapper {
+    display: none;
+  }
 }
