@@ -16,6 +16,9 @@ const customStyles = {
     background: "transparent",
     border: 0,
   },
+  overlay: {
+    zIndex: 10,
+  },
 };
 
 const VideoModal: React.FC<{
