@@ -79,7 +79,7 @@
   padding: 10px 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .headerContainer {
     display: flex;
     justify-content: space-between;
@@ -88,8 +88,8 @@
   }
 
   .wrapper {
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     position: relative;
     bottom: 102px;
     padding: 0 20px;

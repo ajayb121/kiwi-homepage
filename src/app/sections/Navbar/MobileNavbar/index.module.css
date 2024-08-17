@@ -4,11 +4,11 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  /* z-index: 1000; */
   background-color: #000000;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .mobileWrapper {
     display: block;
   }

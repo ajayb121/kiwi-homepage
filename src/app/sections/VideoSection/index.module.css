@@ -1,6 +1,41 @@
 .wrapper {
-  /* background-color: #000000; */
+  min-height: 500px;
+  background-color: white;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  cursor: pointer;
+  position: relative;
 }
 
 .videoBackground {
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  opacity: 0.6;
+}
+
+.playIconContainer {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+}
+
+/* .playIconContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+} */
+
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    min-height: 150px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .videoBackground {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
 }

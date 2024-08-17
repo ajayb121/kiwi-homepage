@@ -72,6 +72,7 @@ const WhyChooseUs = () => {
             <h2 className={`${archivoBlack.className} ${styles.header}`}>
               Why Choose Us ?
             </h2>
+            {/* change background color using intersection observer */}
             <div className={styles.imageBg}></div>
           </section>
           <div className={styles.secondSection}>

@@ -1,0 +1,24 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.modal {
+  padding: 0;
+}
+
+.videoStyle {
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 800px) {
+  .wrapper {
+  }
+}

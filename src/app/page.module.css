@@ -9,11 +9,11 @@
   position: sticky;
   top: 80px;
   background-color: #000000;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .otherSections {
   position: relative;
-  z-index: 20;
+  /* z-index: 20; */
   bottom: 100px;
 }
