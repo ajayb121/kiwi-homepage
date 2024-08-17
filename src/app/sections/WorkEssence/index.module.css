@@ -43,3 +43,29 @@
   font-size: 64px;
   padding-top: 100px;
 }
+
+.layerContainer {
+  transform: rotate(4deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    height: 1400px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    position: relative;
+    bottom: 132px;
+    padding: 0 20px;
+  }
+
+  .header {
+    font-size: 32px;
+    text-align: center;
+    padding-top: 72px;
+  }
+
+  .layerContainer {
+    position: relative;
+    bottom: 102px;
+  }
+}

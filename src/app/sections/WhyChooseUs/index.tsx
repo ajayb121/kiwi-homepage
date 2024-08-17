@@ -35,33 +35,65 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className={styles.wrapper}>
-      <section className={styles.sectionBody}>
-        <section className={styles.firstSection}>
-          <h2 className={`${archivoBlack.className} ${styles.header}`}>
+    <>
+      <div className={styles.mobileWrapper}>
+        <section className={styles.mobileSectionBody}>
+          <h2 className={`${archivoBlack.className} ${styles.mobileHeader}`}>
             Why Choose Us ?
           </h2>
-          <div className={styles.imageBg}></div>
-        </section>
-        <div className={styles.secondSection}>
+          <div className={styles.mobileImageBg}></div>
+
           {sections.map((section, index) => (
-            <div key={index}>
-              <h3 className={`${archivoBlack.className} ${styles.subHeader}`}>
+            <div
+              key={index}
+              style={{ paddingTop: index === 0 ? "80px" : "100px" }}
+            >
+              <h3
+                className={`${archivoBlack.className} ${styles.mobileSubHeader}`}
+              >
                 {section.title}
               </h3>
-              <p className={styles.description}>{section.description}</p>
-              <div className={styles.buttonsContainer}>
+              <p className={styles.mobileDescription}>{section.description}</p>
+              <div className={styles.mobileButtonsContainer}>
                 {section.links.map((link, linkIndex) => (
-                  <a key={linkIndex} href="#" className={styles.button}>
+                  <a key={linkIndex} href="#" className={styles.mobileButton}>
                     {link}
                   </a>
                 ))}
               </div>
             </div>
           ))}
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+
+      <div className={styles.desktopWrapper}>
+        <section className={styles.sectionBody}>
+          <section className={styles.firstSection}>
+            <h2 className={`${archivoBlack.className} ${styles.header}`}>
+              Why Choose Us ?
+            </h2>
+            <div className={styles.imageBg}></div>
+          </section>
+          <div className={styles.secondSection}>
+            {sections.map((section, index) => (
+              <div key={index}>
+                <h3 className={`${archivoBlack.className} ${styles.subHeader}`}>
+                  {section.title}
+                </h3>
+                <p className={styles.description}>{section.description}</p>
+                <div className={styles.buttonsContainer}>
+                  {section.links.map((link, linkIndex) => (
+                    <a key={linkIndex} href="#" className={styles.button}>
+                      {link}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

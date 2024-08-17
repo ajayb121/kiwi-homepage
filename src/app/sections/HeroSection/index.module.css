@@ -19,3 +19,19 @@
   max-width: 900px;
   padding-top: 25px;
 }
+
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .sectionBody {
+    padding: 64px 0;
+  }
+}
