@@ -1,11 +1,8 @@
 import { archivoBlack } from "@/app/fonts";
 
 import styles from "./index.module.css";
-import useResponsiveView from "@/app/hooks/useResponsiveView";
 
 const WhyChooseUs = () => {
-  const isMobile = useResponsiveView();
-
   const sections = [
     {
       title: "Impeccable Design",
@@ -37,8 +34,8 @@ const WhyChooseUs = () => {
     },
   ];
 
-  if (isMobile) {
-    return (
+  return (
+    <>
       <div className={styles.mobileWrapper}>
         <section className={styles.mobileSectionBody}>
           <h2 className={`${archivoBlack.className} ${styles.mobileHeader}`}>
@@ -68,37 +65,35 @@ const WhyChooseUs = () => {
           ))}
         </section>
       </div>
-    );
-  }
 
-  return (
-    <div className={styles.wrapper}>
-      <section className={styles.sectionBody}>
-        <section className={styles.firstSection}>
-          <h2 className={`${archivoBlack.className} ${styles.header}`}>
-            Why Choose Us ?
-          </h2>
-          <div className={styles.imageBg}></div>
-        </section>
-        <div className={styles.secondSection}>
-          {sections.map((section, index) => (
-            <div key={index}>
-              <h3 className={`${archivoBlack.className} ${styles.subHeader}`}>
-                {section.title}
-              </h3>
-              <p className={styles.description}>{section.description}</p>
-              <div className={styles.buttonsContainer}>
-                {section.links.map((link, linkIndex) => (
-                  <a key={linkIndex} href="#" className={styles.button}>
-                    {link}
-                  </a>
-                ))}
+      <div className={styles.desktopWrapper}>
+        <section className={styles.sectionBody}>
+          <section className={styles.firstSection}>
+            <h2 className={`${archivoBlack.className} ${styles.header}`}>
+              Why Choose Us ?
+            </h2>
+            <div className={styles.imageBg}></div>
+          </section>
+          <div className={styles.secondSection}>
+            {sections.map((section, index) => (
+              <div key={index}>
+                <h3 className={`${archivoBlack.className} ${styles.subHeader}`}>
+                  {section.title}
+                </h3>
+                <p className={styles.description}>{section.description}</p>
+                <div className={styles.buttonsContainer}>
+                  {section.links.map((link, linkIndex) => (
+                    <a key={linkIndex} href="#" className={styles.button}>
+                      {link}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 
