@@ -99,7 +99,7 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
           <div className={`${urbanist.className} ${styles.collaborateSection}`}>
             <div className={styles.collaborateContent}>
               <h1 className={`${archivoBlack.className} ${styles.header}`}>
-                Let's <br />
+                Let&apos;s <br />
                 Collaborate!
               </h1>
               <p className={styles.description}>
