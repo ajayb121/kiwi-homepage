@@ -63,8 +63,8 @@ const OurProcess: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className={styles.chatButton}>
-          <a onClick={() => setShowModal(true)}>Let&apos;s Chat</a>
+        <div className={styles.chatButton} onClick={() => setShowModal(true)}>
+          <a>Let&apos;s Chat</a>
         </div>
       </section>
       <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />

@@ -35,6 +35,10 @@
   padding-top: 25px;
 }
 
+.chatButton {
+  cursor: pointer;
+}
+
 .chatButton a {
   background-color: #dbff00;
   color: #000000;

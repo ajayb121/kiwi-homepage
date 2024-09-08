@@ -14,6 +14,7 @@ interface NavbarProps {
 const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
+    phoneNumber: "",
     email: "",
     project: "",
   });
@@ -35,6 +36,7 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
     },
     overlay: {
       zIndex: 10,
+      background: "rgba(0, 0, 0, 0.70)",
     },
   };
 
@@ -120,6 +122,17 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                   id="name"
                   placeholder="Full name"
                   value={formData.name}
+                  onChange={handleChange}
+                  className={`${urbanist.className}`}
+                  required
+                />
+
+                <label htmlFor="phoneNumber">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  placeholder="Phone number"
+                  value={formData.phoneNumber}
                   onChange={handleChange}
                   className={`${urbanist.className}`}
                   required

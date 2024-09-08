@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
           <h2 className={`${archivoBlack.className} ${styles.mobileHeader}`}>
             Why Choose Us ?
           </h2>
-          <div className={styles.mobileImageBg}>
+          {/* <div className={styles.mobileImageBg}>
             <Image
               src="/why-choose-us-4.svg"
               alt="Why Choose Us Background"
@@ -86,29 +86,44 @@ const WhyChooseUs = () => {
               priority
               className={styles.closeIcon}
             />
-          </div>
-          {/* <div className={styles.mobileImageBg}></div> */}
+          </div> */}
 
           <div className={styles.secondSectionMobile}>
             {sections.map((section, index) => (
-              <div
-                key={index}
-                style={{ paddingTop: index === 0 ? "80px" : "100px" }}
-              >
-                <h3
-                  className={`${archivoBlack.className} ${styles.mobileSubHeader}`}
+              <div key={index}>
+                <div
+                  className={styles.mobileImageBg}
+                  style={{ marginTop: index === 0 ? "0" : "70px" }}
                 >
-                  {section.title}
-                </h3>
-                <p className={styles.mobileDescription}>
-                  {section.description}
-                </p>
-                <div className={styles.mobileButtonsContainer}>
-                  {section.links.map((link, linkIndex) => (
-                    <a key={linkIndex} href="#" className={styles.mobileButton}>
-                      {link}
-                    </a>
-                  ))}
+                  <Image
+                    src={section.image}
+                    alt="Why Choose Us Background"
+                    width={300}
+                    height={300}
+                    priority
+                    className={styles.closeIcon}
+                  />
+                </div>
+                <div style={{ paddingTop: "20px" }}>
+                  <h3
+                    className={`${archivoBlack.className} ${styles.mobileSubHeader}`}
+                  >
+                    {section.title}
+                  </h3>
+                  <p className={styles.mobileDescription}>
+                    {section.description}
+                  </p>
+                  <div className={styles.mobileButtonsContainer}>
+                    {section.links.map((link, linkIndex) => (
+                      <a
+                        key={linkIndex}
+                        href="#"
+                        className={styles.mobileButton}
+                      >
+                        {link}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
