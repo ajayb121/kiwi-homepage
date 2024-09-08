@@ -1,0 +1,131 @@
+.wrapper {
+  background-color: #343434;
+  padding: 30px 80px 150px;
+  border-radius: 40px;
+  color: white;
+  position: relative;
+}
+
+.bgImage {
+  position: absolute;
+  bottom: -370px;
+  left: -185px;
+}
+
+.imageContainer {
+  width: 100%;
+  text-align: right;
+  padding-bottom: 20px;
+}
+
+.collaborateSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.collaborateContent {
+  color: #fffcec;
+}
+
+.header {
+  font-size: 64px;
+}
+
+.description {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.note {
+  font-size: 14px;
+  color: #ddff00;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #d4ff00;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.formContainer {
+  background-color: #fffcec;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.formWrapper label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.formWrapper input,
+.formWrapper textarea,
+.formWrapper .projectInput {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.submitButton {
+  background-color: #d4ff00;
+  color: #000;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* margin-top: 20px; */
+}
+
+.submitButton:hover {
+  background-color: #c1e600;
+}
+
+.closeIcon {
+  /* position: absolute; */
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    padding: 0;
+    width: 100vw;
+    border-radius: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .header {
+    font-size: 48px;
+  }
+  .collaborateSection {
+    flex-direction: column;
+    margin: 0 20px;
+    gap: 20px;
+  }
+  .formWrapper {
+    width: 100%;
+  }
+  .imageContainer {
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    background: #343434;
+  }
+}

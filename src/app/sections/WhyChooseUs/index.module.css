@@ -48,7 +48,7 @@
 }
 
 .header {
-  padding: 150px 0 50px;
+  padding: 75px 0 50px;
   font-size: 64px;
   width: 500px;
   color: #ffffff;
@@ -75,17 +75,29 @@
 }
 
 .imageBg {
-  background-color: red;
-  height: 637px;
-  width: 537px;
+  background: #343434;
+  width: 500px;
+  height: 500px;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileImageBg {
-  background-color: red;
+  /* background-color: red;
   height: 440px;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 8px; */
+
+  background: #343434;
+  width: 100%;
+  padding: 30px;
+  /* height: 400px; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonsContainer {
@@ -149,6 +161,7 @@
 
 .secondSection {
   grid-column: 2 / 4;
+  padding-bottom: 380px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -157,5 +170,8 @@
   }
   .mobileWrapper {
     display: block;
+  }
+  .secondSectionMobile {
+    padding-bottom: 50px;
   }
 }

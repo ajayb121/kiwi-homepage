@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { archivoBlack } from "@/app/fonts";
+
+import ContactModal from "@/app/components/ContactModal";
+import useResponsiveView from "@/app/hooks/useResponsiveView";
 
 import styles from "./index.module.css";
 import Image from "next/image";
-import Link from "next/link";
-import useResponsiveView from "@/app/hooks/useResponsiveView";
 
 const sections = [
   {
@@ -24,6 +26,7 @@ const sections = [
 ];
 const OurProcess: React.FC = () => {
   const isMobile = useResponsiveView();
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.wrapper}>
       <section className={styles.sectionBody}>
@@ -61,9 +64,10 @@ const OurProcess: React.FC = () => {
           ))}
         </div>
         <div className={styles.chatButton}>
-          <Link href="/contact">Let&apos;s Chat</Link>
+          <a onClick={() => setShowModal(true)}>Let&apos;s Chat</a>
         </div>
       </section>
+      <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 };

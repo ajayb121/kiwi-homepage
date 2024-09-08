@@ -1,22 +1,45 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import ContactModal from "@/app/components/ContactModal";
+
 import styles from "./index.module.css";
 
-const MobileNavbar: React.FC = () => {
+interface NavbarProps {
+  scrollToWork: () => void;
+  scrollToWhyUs: () => void;
+  scrollToProcess: () => void;
+}
+
+const MobileNavbar: React.FC<NavbarProps> = ({
+  scrollToWork,
+  scrollToWhyUs,
+  scrollToProcess,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const [showModal, setShowModal] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+  const closeMenuAndNavigate = useCallback((scrollFn: () => void) => {
+    setIsOpen(false);
+    scrollFn();
+  }, []);
+
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    if (!menuRef.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
-  };
+  }, []);
+
+  const showContactModal = useCallback((): void => {
+    setIsOpen(false);
+    setShowModal(true);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -28,7 +51,7 @@ const MobileNavbar: React.FC = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen]);
+  }, [isOpen, handleClickOutside]);
 
   return (
     <div className={styles.mobileWrapper} ref={menuRef}>
@@ -36,11 +59,11 @@ const MobileNavbar: React.FC = () => {
         <div className={styles.logo}>
           <Link href="/">
             <Image
-              src="/kiwi-logo.svg"
-              alt="Kiwi Logo"
+              src="/indiekreativ-logo.svg"
+              alt="Indiekreativ Short Logo"
               className={styles.kiwiLogo}
-              width={90}
-              height={25}
+              width={45}
+              height={45}
               priority
             />
           </Link>
@@ -48,39 +71,32 @@ const MobileNavbar: React.FC = () => {
         <div className={`${styles.navbarLinks} ${isOpen ? styles.active : ""}`}>
           <ul>
             <li>
-              <a href="#">Works</a>
+              <a onClick={() => closeMenuAndNavigate(scrollToWhyUs)}>Why Us?</a>
             </li>
             <li>
-              <a href="#">Why Us?</a>
+              <a onClick={() => closeMenuAndNavigate(scrollToProcess)}>
+                Our Process
+              </a>
             </li>
             <li>
-              <a href="#">What’s Next</a>
+              <a onClick={() => closeMenuAndNavigate(scrollToWork)}>Our Work</a>
             </li>
           </ul>
-          <Link href="/contact">
-            <button className={styles.chatButton}>Let&apos;s Chat</button>
-          </Link>
+          <div className={styles.chatButton} onClick={showContactModal}>
+            <a>Let&apos;s Chat</a>
+          </div>
         </div>
         <div onClick={toggleMenu}>
-          {!isOpen ? (
-            <Image
-              src="/hamburger-icon.svg"
-              alt="Hamburger Menu"
-              width={40}
-              height={40}
-              priority
-            />
-          ) : (
-            <Image
-              src="/cross-icon.svg"
-              alt="Cross Icon"
-              width={40}
-              height={40}
-              priority
-            />
-          )}
+          <Image
+            src={isOpen ? "/cross-icon.svg" : "/hamburger-icon.svg"}
+            alt={isOpen ? "Cross Icon" : "Hamburger Menu"}
+            width={40}
+            height={40}
+            priority
+          />
         </div>
       </nav>
+      <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 };

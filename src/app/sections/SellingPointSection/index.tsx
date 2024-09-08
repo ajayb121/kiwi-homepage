@@ -1,12 +1,15 @@
+import { useState } from "react";
+import Image from "next/image";
+
 import { archivoBlack } from "@/app/fonts";
+import useResponsiveView from "@/app/hooks/useResponsiveView";
+import ContactModal from "@/app/components/ContactModal";
 
 import styles from "./index.module.css";
-import Image from "next/image";
-import Link from "next/link";
-import useResponsiveView from "@/app/hooks/useResponsiveView";
 
 const SellingPointSection: React.FC = () => {
   const isMobile = useResponsiveView();
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className={styles.wrapper}>
@@ -17,20 +20,34 @@ const SellingPointSection: React.FC = () => {
               Imagine having a Landing Page Uniquely Crafted
             </h2>
           </div>
-          <Image
-            src="/sales-icon.svg"
-            alt="Feather Icon"
-            className={styles.featherIcon}
-            width={isMobile ? 72 : 134}
-            height={isMobile ? 72 : 134}
-            priority
-          />
+
+          <div className={styles.desktopBgImage}>
+            <Image
+              src="/selling-point-background.svg"
+              alt="Selling Point Background"
+              className={styles.featherIcon}
+              width={650}
+              height={443}
+              priority
+            />
+          </div>
+          <div className={styles.mobileBgImage}>
+            <Image
+              src="/selling-point-background.svg"
+              alt="Selling Point Background"
+              className={styles.featherIcon}
+              width={72}
+              height={43}
+              priority
+            />
+          </div>
         </div>
 
         <div className={styles.chatButton}>
-          <Link href="/contact">Let&apos;s Chat</Link>
+          <a onClick={() => setShowModal(true)}>Let&apos;s Chat</a>
         </div>
       </section>
+      <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 };

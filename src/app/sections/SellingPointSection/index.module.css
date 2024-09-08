@@ -1,11 +1,12 @@
 .wrapper {
-  background-color: #ff4829;
+  background-color: #e9284a;
   color: #000000;
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
   position: relative;
   bottom: 320px;
   padding: 0 20px;
+  overflow-y: hidden;
 }
 
 .sectionBody {
@@ -52,6 +53,17 @@
   color: white;
 }
 
+.desktopBgImage {
+  display: block;
+  position: absolute;
+  bottom: -70px;
+  right: -91px;
+}
+
+.mobileBgImage {
+  display: none;
+}
+
 @media only screen and (max-width: 800px) {
   .wrapper {
     border-top-left-radius: 20px;
@@ -80,5 +92,12 @@
 
   .chatButton {
     text-align: center;
+  }
+
+  .desktopBgImage {
+    display: none;
+  }
+  .mobileBgImage {
+    display: block;
   }
 }

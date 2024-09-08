@@ -1,10 +1,24 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+import ContactModal from "@/app/components/ContactModal";
 
 import styles from "./index.module.css";
 import MobileNavbar from "./MobileNavbar";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  scrollToWork: () => void;
+  scrollToWhyUs: () => void;
+  scrollToProcess: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  scrollToWork,
+  scrollToWhyUs,
+  scrollToProcess,
+}) => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <>
       <div className={styles.desktopWrapper}>
@@ -12,32 +26,37 @@ const Navbar: React.FC = () => {
           <div className={styles.logo}>
             <Link href="/">
               <Image
-                src="/kiwi-logo.svg"
-                alt="Kiwi Logo"
+                src="/indiekreativ-full-logo.svg"
+                alt="Indiekreativ Logo"
                 className={styles.kiwiLogo}
-                width={90}
-                height={25}
+                width={227}
+                height={40}
                 priority
               />
             </Link>
           </div>
           <ul className={styles.navLinks}>
             <li>
-              <Link href="/works">Works</Link>
+              <a onClick={scrollToWhyUs}>Why Us?</a>
             </li>
             <li>
-              <Link href="/why-us">Why Us?</Link>
+              <a onClick={scrollToProcess}>Our Process</a>
             </li>
             <li>
-              <Link href="/whats-next">What&apos;s Next</Link>
+              <a onClick={scrollToWork}>Our Work</a>
             </li>
           </ul>
           <div className={styles.chatButton}>
-            <Link href="/contact">Let&apos;s Chat</Link>
+            <a onClick={() => setShowModal(true)}>Let&apos;s Chat</a>
           </div>
         </nav>
       </div>
-      <MobileNavbar />
+      <MobileNavbar
+        scrollToWork={scrollToWork}
+        scrollToWhyUs={scrollToWhyUs}
+        scrollToProcess={scrollToProcess}
+      />
+      <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </>
   );
 };
