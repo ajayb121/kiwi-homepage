@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Indiekreativ - Building Smart UI/UX solutions",
+  title: "Indiekreativ Studio - Building Smart UI/UX solutions",
   description:
-    "Indiekreativ is a design and development agency that builds smart UI/UX solutions for web and mobile applications.",
+    "Indiekreativ Studio is a design and development agency that builds smart UI/UX solutions for web and mobile applications.",
 };
 
 export default function RootLayout({
