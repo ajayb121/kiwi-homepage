@@ -53,7 +53,7 @@ const FirstImageLayer = ({ top, images }: ImageLayerProps) => {
               alt="Image-1 Logo"
               width={440}
               height={250}
-              priority
+              loading="lazy"
               style={{
                 borderRadius: "10px",
               }}
@@ -106,7 +106,7 @@ const SecondImageLayer = ({ top, images }: ImageLayerProps) => {
               alt={`Image-${index + 1} Logo`}
               width={440}
               height={250}
-              priority
+              loading="lazy"
               style={{
                 borderRadius: "10px",
               }}
@@ -125,20 +125,23 @@ const layerImages = {
     "/image-3.png",
     "/image-4.png",
     "/image-5.png",
+    "/image-6.png",
   ],
   secondLayer: [
-    "/image-6.png",
     "/image-7.png",
     "/image-8.png",
     "/image-9.png",
     "/image-10.png",
-  ],
-  thirdLayer: [
     "/image-11.png",
     "/image-12.png",
+  ],
+  thirdLayer: [
     "/image-13.png",
     "/image-14.png",
     "/image-15.png",
+    "/image-16.png",
+    "/image-17.png",
+    "/image-18.png",
   ],
 };
 

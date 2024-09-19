@@ -77,17 +77,6 @@ const WhyChooseUs = () => {
           <h2 className={`${archivoBlack.className} ${styles.mobileHeader}`}>
             Why Choose Us ?
           </h2>
-          {/* <div className={styles.mobileImageBg}>
-            <Image
-              src="/why-choose-us-4.svg"
-              alt="Why Choose Us Background"
-              width={300}
-              height={300}
-              priority
-              className={styles.closeIcon}
-            />
-          </div> */}
-
           <div className={styles.secondSectionMobile}>
             {sections.map((section, index) => (
               <div key={index}>
@@ -100,7 +89,7 @@ const WhyChooseUs = () => {
                     alt="Why Choose Us Background"
                     width={300}
                     height={300}
-                    priority
+                    loading="lazy"
                     className={styles.closeIcon}
                   />
                 </div>
@@ -143,7 +132,7 @@ const WhyChooseUs = () => {
                 alt="Why Choose Us Background"
                 width={400}
                 height={400}
-                priority
+                loading="lazy"
               />
             </div>
           </section>
