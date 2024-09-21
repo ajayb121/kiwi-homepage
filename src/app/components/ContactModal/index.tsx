@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
 import Image from "next/image";
 import { archivoBlack, urbanist } from "@/app/fonts";
@@ -96,11 +96,22 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  const onModalClose = () => {
+    onClose();
+    setIsSuccess(null);
+    setFormData({
+      name: "",
+      phoneNumber: "",
+      email: "",
+      project: "",
+    });
+  };
+
   return (
     <>
       <ReactModal
         isOpen={isOpen}
-        onRequestClose={onClose}
+        onRequestClose={onModalClose}
         style={customStyles}
         contentLabel="Example Modal"
       >
@@ -112,7 +123,7 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
               width={40}
               height={40}
               priority
-              onClick={onClose}
+              onClick={onModalClose}
               className={styles.closeIcon}
             />
           </div>
@@ -200,7 +211,7 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
 
                 {isSuccess === false && (
                   <p className={styles.submissionResultError}>
-                    "An error occurred. Please try later."
+                    An error occurred. Please try later.
                   </p>
                 )}
               </div>
@@ -213,7 +224,6 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
               width={640}
               height={640}
               priority
-              onClick={onClose}
             />
           </div>
         </div>
