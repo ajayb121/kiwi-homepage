@@ -60,7 +60,7 @@
 
 .formContainer {
   background-color: #fffcec;
-  padding: 30px;
+  padding: 40px 30px 30px;
   border-radius: 20px;
 }
 
@@ -72,7 +72,7 @@
 
 .formWrapper label {
   font-size: 1.1rem;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
   color: #333;
 }
 
@@ -125,6 +125,27 @@
 .submissionResultError {
   color: #ff4829;
   font-weight: 500;
+}
+
+/* Inputs and Textarea */
+.formWrapper input,
+.formWrapper textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #000; /* Thin black bottom border */
+  background-color: transparent; /* Match the background */
+  margin-bottom: 20px;
+  color: #333; /* Input text color */
+  outline: none;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+.formWrapper input::placeholder,
+.formWrapper textarea::placeholder {
+  color: #a0a0a0; /* Placeholder text color */
 }
 
 @media only screen and (max-width: 800px) {

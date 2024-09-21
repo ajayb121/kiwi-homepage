@@ -157,7 +157,7 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                   required
                 />
 
-                <label htmlFor="phoneNumber">Phone Number</label>
+                <label htmlFor="phoneNumber">Contact</label>
                 <input
                   type="text"
                   id="phoneNumber"
