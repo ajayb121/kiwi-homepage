@@ -19,7 +19,7 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
     project: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionResult, setSubmissionResult] = useState<string | null>(null);
+  const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
   const isMobile = useResponsiveView();
 
   const customStyles = {
@@ -45,17 +45,29 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
+
+    if (id === "phoneNumber") {
+      const phoneRegex = /^[\d+ -]*$/; // Allow numbers, +, and -
+
+      if (phoneRegex.test(value) && value.length <= 15) {
+        setFormData((prevData) => ({
+          ...prevData,
+          [id]: value,
+        }));
+      }
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [id]: value,
+      }));
+    }
   };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmissionResult(null); // Reset the submission result
+    setIsSuccess(null);
 
     try {
       const response = await fetch("/api/submitForm", {
@@ -67,12 +79,18 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
       });
 
       if (response.ok) {
-        setSubmissionResult("Form submitted successfully!");
+        setIsSuccess(true);
+        setFormData({
+          name: "",
+          phoneNumber: "",
+          email: "",
+          project: "",
+        });
       } else {
-        setSubmissionResult("There was a problem submitting the form.");
+        setIsSuccess(false);
       }
     } catch (error) {
-      setSubmissionResult("An error occurred. Please try again.");
+      setIsSuccess(false);
     } finally {
       setIsSubmitting(false);
     }
@@ -124,17 +142,19 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                   value={formData.name}
                   onChange={handleChange}
                   className={`${urbanist.className}`}
+                  maxLength={30}
                   required
                 />
 
                 <label htmlFor="phoneNumber">Phone Number</label>
                 <input
-                  type="tel"
+                  type="text"
                   id="phoneNumber"
                   placeholder="Phone number"
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   className={`${urbanist.className}`}
+                  maxLength={15}
                   required
                 />
 
@@ -146,6 +166,7 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                   value={formData.email}
                   onChange={handleChange}
                   className={`${urbanist.className}`}
+                  maxLength={50}
                   required
                 />
 
@@ -157,6 +178,7 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                   placeholder="Write details about your project here"
                   value={formData.project}
                   onChange={handleChange}
+                  maxLength={500}
                   required
                 ></textarea>
 
@@ -169,9 +191,19 @@ const ContactModal: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                 </button>
               </form>
 
-              {submissionResult && (
-                <p className={styles.submissionResult}>{submissionResult}</p>
-              )}
+              <div className={styles.resultContainer}>
+                {isSuccess && (
+                  <p className={styles.submissionResultSuccess}>
+                    Form submitted successfully!
+                  </p>
+                )}
+
+                {isSuccess === false && (
+                  <p className={styles.submissionResultError}>
+                    "An error occurred. Please try later."
+                  </p>
+                )}
+              </div>
             </div>
           </div>
           <div className={styles.bgImage}>

@@ -110,6 +110,23 @@
   cursor: pointer;
 }
 
+.resultContainer {
+  height: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.submissionResultSuccess {
+  color: #4fbf0a;
+  font-weight: 500;
+}
+
+.submissionResultError {
+  color: #ff4829;
+  font-weight: 500;
+}
+
 @media only screen and (max-width: 800px) {
   .wrapper {
     padding: 0;
