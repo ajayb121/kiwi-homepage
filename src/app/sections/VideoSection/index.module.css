@@ -10,7 +10,7 @@
 .videoBackground {
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
-  opacity: 0.6;
+  /* opacity: 0.6; */
 }
 
 .playIconContainer {

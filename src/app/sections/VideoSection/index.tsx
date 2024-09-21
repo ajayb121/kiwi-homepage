@@ -36,9 +36,9 @@ const VideoSection: React.FC = () => {
           <source src="/background-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className={styles.playIconContainer}>
+        {/* <div className={styles.playIconContainer}>
           <Image src="/play_icon.png" alt="Play Icon" width={80} height={80} />
-        </div>
+        </div> */}
       </section>
 
       <VideoModal

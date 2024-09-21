@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactModal from "react-modal";
 import Image from "next/image";
 import { archivoBlack, urbanist } from "@/app/fonts";

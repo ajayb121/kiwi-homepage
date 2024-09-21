@@ -11,19 +11,50 @@ const sections = [
   {
     title: "Initial Kickoff and Brief",
     description:
-      "An Introductory call to meet the team and know about the project in details",
+      "An Introductory call to meet the team and know about the project in details.",
   },
   {
     title: "Proposal",
     description:
-      "You will receive a detailed proposal with project goals and timelines for a mutual understanding",
+      "You will receive a detailed proposal with project goals and timelines for a mutual understanding.",
   },
   {
-    title: "Contract",
+    title: "Contract & Agreement",
     description:
-      "We will coordinate all necessary documents and payment methods before the project starts",
+      "We will coordinate all necessary documents and payment methods before the project starts.",
+  },
+  {
+    title: "Research & Discovery",
+    description:
+      "Before design begins, we thoroughly research competitor strategies, market trends, and user insights.",
+  },
+  {
+    title: "Concept Development",
+    description:
+      "Armed with research, our team brainstorms and sketches multiple design concepts, each tailored to your brand's unique voice.",
+  },
+  {
+    title: "Design Execution",
+    description:
+      "After concept approval, our designers meticulously craft every detail, ensuring the final product is pixel-perfect.",
+  },
+  {
+    title: "Feedback & Revisions",
+    description:
+      "Your input is key as we collaborate on revisions, ensuring the design exceeds expectations.",
+  },
+  {
+    title: "Final Delivery",
+    description:
+      "Once approved, we finalise and deliver all assets, and if applicable, continue to development.",
+  },
+  {
+    title: "Support & Growth",
+    description:
+      "As the digital landscape evolves, we provide ongoing support to keep your brand ahead of the curve.",
   },
 ];
+
 const OurProcess: React.FC = () => {
   const isMobile = useResponsiveView();
   const [showModal, setShowModal] = useState(false);

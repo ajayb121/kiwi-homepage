@@ -126,6 +126,7 @@ const layerImages = {
     "/image-4.png",
     "/image-5.png",
     "/image-6.png",
+    "/image-19.png",
   ],
   secondLayer: [
     "/image-7.png",
@@ -134,6 +135,7 @@ const layerImages = {
     "/image-10.png",
     "/image-11.png",
     "/image-12.png",
+    "/image-20.png",
   ],
   thirdLayer: [
     "/image-13.png",
