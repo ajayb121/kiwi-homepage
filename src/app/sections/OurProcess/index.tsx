@@ -112,4 +112,6 @@ const OurProcess = forwardRef((props, ref) => {
   );
 });
 
+OurProcess.displayName = "Our Process";
+
 export default OurProcess;

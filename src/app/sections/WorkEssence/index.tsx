@@ -147,24 +147,6 @@ const layerImages = {
   ],
 };
 
-// const WorkEssence = () => {
-//   return (
-//     <div className={styles.wrapper}>
-//       <div className={styles.headerContainer}>
-//         <h1 className={`${archivoBlack.className} ${styles.header}`}>
-//           Essence of Our Work
-//         </h1>
-//       </div>
-//       <div className={styles.layerContainer}>
-//         <FirstImageLayer top={200} images={layerImages.firstLayer} />
-//         <SecondImageLayer top={500} images={layerImages.secondLayer} />
-//         <FirstImageLayer top={800} images={layerImages.thirdLayer} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// Update WorkEssence to receive the ref
 const WorkEssence = forwardRef((props, ref) => {
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -192,4 +174,7 @@ const WorkEssence = forwardRef((props, ref) => {
     </div>
   );
 });
+
+WorkEssence.displayName = "Work Essence";
+
 export default WorkEssence;
