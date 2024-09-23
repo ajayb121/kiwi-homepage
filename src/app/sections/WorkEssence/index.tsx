@@ -1,7 +1,7 @@
 "use client";
 
 import { animate, motion, useAnimation, useMotionValue } from "framer-motion";
-import { useEffect } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import styles from "./index.module.css";
 import useMeasure from "react-use-measure";
 import Image from "next/image";
@@ -147,9 +147,38 @@ const layerImages = {
   ],
 };
 
-const WorkEssence = () => {
+// const WorkEssence = () => {
+//   return (
+//     <div className={styles.wrapper}>
+//       <div className={styles.headerContainer}>
+//         <h1 className={`${archivoBlack.className} ${styles.header}`}>
+//           Essence of Our Work
+//         </h1>
+//       </div>
+//       <div className={styles.layerContainer}>
+//         <FirstImageLayer top={200} images={layerImages.firstLayer} />
+//         <SecondImageLayer top={500} images={layerImages.secondLayer} />
+//         <FirstImageLayer top={800} images={layerImages.thirdLayer} />
+//       </div>
+//     </div>
+//   );
+// };
+
+// Update WorkEssence to receive the ref
+const WorkEssence = forwardRef((props, ref) => {
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  // Allow parent component to access the headerRef
+  useImperativeHandle(ref, () => ({
+    scrollToHeader: () => {
+      if (headerRef.current) {
+        headerRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+  }));
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} ref={headerRef}>
       <div className={styles.headerContainer}>
         <h1 className={`${archivoBlack.className} ${styles.header}`}>
           Essence of Our Work
@@ -162,6 +191,5 @@ const WorkEssence = () => {
       </div>
     </div>
   );
-};
-
+});
 export default WorkEssence;

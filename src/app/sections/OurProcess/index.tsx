@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useRef, forwardRef, useImperativeHandle, useState } from "react";
 import { archivoBlack } from "@/app/fonts";
-
 import ContactModal from "@/app/components/ContactModal";
 import useResponsiveView from "@/app/hooks/useResponsiveView";
-
 import styles from "./index.module.css";
 import Image from "next/image";
 
@@ -55,12 +53,23 @@ const sections = [
   },
 ];
 
-const OurProcess: React.FC = () => {
+const OurProcess = forwardRef((props, ref) => {
   const isMobile = useResponsiveView();
   const [showModal, setShowModal] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  // Expose the scroll functionality to parent component
+  useImperativeHandle(ref, () => ({
+    scrollToHeader: () => {
+      if (headerRef.current) {
+        headerRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+  }));
+
   return (
     <div className={styles.wrapper}>
-      <section className={styles.sectionBody}>
+      <section ref={headerRef} className={styles.sectionBody}>
         <div className={styles.headerContainer}>
           <div>
             <h2 className={`${archivoBlack.className} ${styles.header}`}>
@@ -101,6 +110,6 @@ const OurProcess: React.FC = () => {
       <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
-};
+});
 
 export default OurProcess;

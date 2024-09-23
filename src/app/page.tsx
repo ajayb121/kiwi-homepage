@@ -14,9 +14,9 @@ import SellingPointSection from "./sections/SellingPointSection";
 import useResponsiveView from "./hooks/useResponsiveView";
 
 export default function Home() {
-  const workSectionRef = useRef<HTMLDivElement>(null);
   const whyUsRef = useRef<HTMLDivElement>(null);
-  const ourProcessRef = useRef<HTMLDivElement>(null);
+  const ourProcessRef = useRef<{ scrollToHeader: () => void }>(null);
+  const workEssenceRef = useRef<{ scrollToHeader: () => void }>(null);
   const isMobile = useResponsiveView();
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
@@ -25,12 +25,24 @@ export default function Home() {
     }
   };
 
+  const scrollToWorkEssence = () => {
+    if (workEssenceRef.current) {
+      workEssenceRef.current.scrollToHeader();
+    }
+  };
+
+  const scrollToOurProcess = () => {
+    if (ourProcessRef.current) {
+      ourProcessRef.current.scrollToHeader();
+    }
+  };
+
   return (
     <main className={`${styles.main} ${urbanist.className}`}>
       <Navbar
-        scrollToWork={() => scrollToSection(workSectionRef)}
+        scrollToWork={scrollToWorkEssence}
         scrollToWhyUs={() => scrollToSection(whyUsRef)}
-        scrollToProcess={() => scrollToSection(ourProcessRef)}
+        scrollToProcess={scrollToOurProcess}
       />
       <div className={styles.stickyHeroSection}>
         <HeroSection />
@@ -52,11 +64,11 @@ export default function Home() {
           <div ref={whyUsRef}>
             <WhyChooseUs />
           </div>
-          <div ref={ourProcessRef}>
-            <OurProcess />
+          <div>
+            <OurProcess ref={ourProcessRef} />
           </div>
-          <div ref={workSectionRef}>
-            <WorkEssence />
+          <div>
+            <WorkEssence ref={workEssenceRef} />
           </div>
           <SellingPointSection />
         </div>
