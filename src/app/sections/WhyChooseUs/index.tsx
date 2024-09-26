@@ -7,9 +7,9 @@ import Image from "next/image";
 const WhyChooseUs = () => {
   const sections = [
     {
-      title: "Impeccable Design",
+      title: "Design",
       description:
-        "We create digital experiences that not only look spectacular but also impress investors and drive funding",
+        "We craft visually stunning and user-friendly interfaces that showcase your innovation. Every detail is designed to resonate with your vision.",
       links: [
         "UX-Audit",
         "Component Library",
@@ -104,11 +104,7 @@ const WhyChooseUs = () => {
                   </p>
                   <div className={styles.mobileButtonsContainer}>
                     {section.links.map((link, linkIndex) => (
-                      <a
-                        key={linkIndex}
-                        href="#"
-                        className={styles.mobileButton}
-                      >
+                      <a key={linkIndex} className={styles.mobileButton}>
                         {link}
                       </a>
                     ))}
@@ -150,7 +146,7 @@ const WhyChooseUs = () => {
                 <p className={styles.description}>{section.description}</p>
                 <div className={styles.buttonsContainer}>
                   {section.links.map((link, linkIndex) => (
-                    <a key={linkIndex} href="#" className={styles.button}>
+                    <a key={linkIndex} className={styles.button}>
                       {link}
                     </a>
                   ))}
