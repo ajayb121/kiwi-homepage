@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import ContactModal from "@/app/components/ContactModal";
+import { urbanist } from "@/app/fonts";
 
 import styles from "./index.module.css";
 
@@ -56,8 +57,8 @@ const MobileNavbar: React.FC<NavbarProps> = ({
   return (
     <div className={styles.mobileWrapper} ref={menuRef}>
       <nav className={styles.navbar}>
-        <div className={styles.logo}>
-          <Link href="/">
+        <Link href="/">
+          <div className={styles.logo}>
             <Image
               src="/indiekreativ-logo.svg"
               alt="Indiekreativ Short Logo"
@@ -66,8 +67,20 @@ const MobileNavbar: React.FC<NavbarProps> = ({
               height={45}
               priority
             />
-          </Link>
-        </div>
+            {/* // urnbanist */}
+            <p
+              className={`${styles.logoText} ${urbanist.className}`}
+              style={{
+                color: "white",
+                paddingLeft: "5px",
+                fontSize: "24px",
+                fontWeight: "bold",
+              }}
+            >
+              INDEKREATIV
+            </p>
+          </div>
+        </Link>
         <div className={`${styles.navbarLinks} ${isOpen ? styles.active : ""}`}>
           <ul>
             <li>

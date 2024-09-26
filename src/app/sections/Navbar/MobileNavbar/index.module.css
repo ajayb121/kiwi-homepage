@@ -95,3 +95,8 @@
 .chatButton a {
   color: #000000;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+}

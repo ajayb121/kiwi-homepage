@@ -15,17 +15,28 @@
 
 .playIconContainer {
   position: absolute;
-  top: calc(50% - 40px);
-  left: calc(50% - 40px);
-}
-
-/* .playIconContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 75%;
+  left: 10%;
   transform: translate(-50%, -50%);
   z-index: 2;
-} */
+}
+
+.chatButton {
+  background-color: #dbff00;
+  color: #000000;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.chatButton p {
+  padding-left: 5px;
+}
 
 @media only screen and (max-width: 800px) {
   .wrapper {
@@ -37,5 +48,15 @@
   .videoBackground {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+  }
+
+  .playIconContainer {
+    bottom: -20px;
+    left: 50%;
+  }
+
+  .chatButton {
+    padding: 5px 15px;
+    font-size: 14px;
   }
 }
