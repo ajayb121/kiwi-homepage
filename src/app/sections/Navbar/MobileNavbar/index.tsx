@@ -67,7 +67,6 @@ const MobileNavbar: React.FC<NavbarProps> = ({
               height={45}
               priority
             />
-            {/* // urnbanist */}
             <p
               className={`${styles.logoText} ${urbanist.className}`}
               style={{
