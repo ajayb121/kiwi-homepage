@@ -67,16 +67,8 @@ const MobileNavbar: React.FC<NavbarProps> = ({
               height={45}
               priority
             />
-            <p
-              className={`${styles.logoText} ${urbanist.className}`}
-              style={{
-                color: "white",
-                paddingLeft: "5px",
-                fontSize: "24px",
-                fontWeight: "bold",
-              }}
-            >
-              INDEKREATIV
+            <p className={`${styles.logoText} ${urbanist.className}`}>
+              INDIEKREATIV
             </p>
           </div>
         </Link>

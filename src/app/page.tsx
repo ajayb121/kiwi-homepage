@@ -48,15 +48,11 @@ export default function Home() {
         <HeroSection />
         <ProductRibbon />
       </div>
-      <div
-        style={{
-          position: "relative",
-        }}
-      >
+      <div className={styles.sectionContainer}>
         <div
           className={styles.otherSections}
           style={{
-            maxHeight: isMobile ? "4000px" : "6700px",
+            maxHeight: isMobile ? "6000px" : "7500px",
           }}
         >
           <VideoSection />

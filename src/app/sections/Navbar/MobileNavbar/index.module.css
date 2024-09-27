@@ -95,3 +95,10 @@
   display: flex;
   align-items: center;
 }
+
+.logoText {
+  color: white;
+  padding-left: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}

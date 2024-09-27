@@ -1,5 +1,5 @@
 .wrapper {
-  height: 1800px;
+  height: 1500px;
   overflow-x: hidden;
   background-color: #0f0d0b;
   color: #ffffff;
@@ -8,6 +8,7 @@
   position: relative;
   bottom: 240px;
   padding: 0 20px;
+  overflow-y: hidden;
 }
 
 .horizontalScroll {
@@ -50,7 +51,7 @@
 
 @media only screen and (max-width: 800px) {
   .wrapper {
-    height: 1550px;
+    height: 1450px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     position: relative;
